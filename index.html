@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Project 2 Report</title>
+    <style>
+      :root {
+        --color-neutral-95: hsl(220 10% 95%);
+        --color-neutral-90: hsl(220 10% 90%);
+        --color-neutral-80: hsl(220 10% 80%);
+        --color-neutral-70: hsl(220 10% 70%);
+        --color-neutral-60: hsl(220 10% 60%);
+        --color-neutral-50: hsl(220 10% 50%);
+        --color-neutral-40: hsl(220 10% 40%);
+        --color-neutral-30: hsl(220 10% 30%);
+        --color-neutral-20: hsl(220 10% 20%);
+        --color-neutral-10: hsl(220 10% 10%);
+      }
+
+      html {
+        font: 100%/1.5 system-ui;
+        counter-reset: figure;
+        background: var(--color-neutral-95);
+        max-width: min(75vw, 80em);
+        margin: 0 auto;
+      }
+
+      /* Headings */
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        line-height: 1.1;
+        font-weight: 600;
+        text-wrap: balance;
+      }
+
+      h1,
+      h2 {
+        border-bottom: 1px solid var(--color-neutral-80);
+        padding-bottom: 0.2em;
+      }
+
+      h1 {
+        margin-block: 1em 0.5rem;
+        font-size: clamp(2.5em, 150% + 2vh + 2vw, 10vmin);
+        font-weight: 800;
+
+        small {
+          display: block;
+          width: fit-content;
+          padding: 0.2em 0.5em;
+          margin-inline: auto;
+          color: white;
+          background: var(--color-neutral-40);
+          font-size: 40%;
+          text-transform: uppercase;
+          white-space: nowrap;
+        }
+      }
+
+      h2 {
+        font-size: 180%;
+        color: var(--color-neutral-30);
+      }
+
+      h3 {
+        font-size: 130%;
+      }
+
+      /* Lists */
+
+      ul,
+      ol {
+        padding-inline-start: 2em;
+      }
+
+      li {
+        &::marker {
+          color: var(--color-neutral-40);
+        }
+
+        + li {
+          margin-top: 0.2em;
+        }
+      }
+
+      /* Sectioning elements */
+
+      header {
+        padding-block: 1em;
+        text-align: center;
+      }
+
+      main {
+        background: white;
+        color: var(--color-neutral-20);
+        border-radius: 1rem;
+        padding: 0.1rem 2rem;
+      }
+
+      /* Figures */
+
+      figure {
+        margin: 1em 0;
+        padding: 0.5rem;
+        margin-inline: -0.5em;
+        border: 1px solid var(--color-neutral-80);
+        box-shadow: 0 0.1em 0.2em var(--color-neutral-95);
+        text-align: center;
+        background: white;
+
+        > figcaption {
+          font: 500 75% var(--font-sans);
+          background: var(--color-neutral-95);
+          padding: 0.5rem;
+          margin: -0.5rem;
+          margin-top: 0.5rem;
+          counter-increment: figure;
+          text-align: left;
+
+          &::before {
+            content: 'Figure ' counter(figure) ': ';
+            font-weight: bold;
+            color: var(--color-neutral-40);
+          }
+
+          a:not(:hover, :focus, :active) {
+            color: inherit;
+            text-decoration: underline;
+            text-decoration-color: color-mix(
+              in lab,
+              currentColor,
+              transparent 70%
+            );
+          }
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>
+        <small>Assignment 4</small>
+        Persuasive or Deceptive Visualization?
+      </h1>
+
+      <p><strong>Gabriel Tedja, Kerim Orucevic, Derrick Dollesin</strong> — <em>gtedja@ucsd.edu, ddollesin@ucsd.edu, korucevic@ucsd.edu</em></p>
+    </header>
+
+    <main>
+      <h2>Proposition: Climate change is a real, existential threat that is acting faster than we think and may have severe implications
+        for countries and their environments, but particularly coastal communities.
+      </h2>
+
+      <section>
+        <h3>FOR the Proposition</h3>
+
+        <figure>
+          <img src="plots/sea-level-acc.png" alt="Sea level acceleration plot" />
+          <figcaption>This shows the difference in rises in sea level from year to year. Note that the  dips into the negatives, which means the rate of sea level rise
+            never actually slows down from year to year.
+          </figcaption>
+        </figure>
+
+        <p>Design Decisions and Rationale:</p>
+
+        <ul>
+          <li>For both temperature and sea level plots we decided to track the change from last year's rise in the respective units, 
+as we felt that would demonstrate a trend in the increase of the rate of global warming over time. As shown in this plot, the overall highest rise is more concentrated in the late 2000s to now compared to before (Score: 2)</li>
+          <li>Both temperature and sea level were initially considered as metrics, but sea level was ultimately chosen because it is a more tangible metric than simply temperature, and has a more distressing potential impact on those in coastal communities (Score: 2)</li>
+          <li>I chose to not make any deceptive choices when transforming the data, in fact, I made the y-axis for the sea level plot start at 0 to be as transparent as possible. Having it start at the lowest value would convey the wrong message. (Score: 2)
+</li>
+          <li>The highlighted red points show the 5 highest differences from year to year, allowing the reader to track the trend over time (Score: 2)
+</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>AGAINST the Proposition</h3>
+
+        <figure>
+          <img src="plots/ndgain_index_distribution_2015_2021_green.png" alt="ND GAIN Index Changes 2015-2021 Plot" />
+          <figcaption>This visualization shows the patterns in the amount of change in countries' ND GAIN Index across the world from 2015-2021 given the climate change acceleration. </figcaption>
+        </figure>
+        
+
+        <p>Design Decisions and Rationale:</p>
+
+        <ul>
+          <li>Histogram: I chose the bar graph as my visualization type for all of the visualizations to mainly show the concentration of the data around 0.0 ND-GAIN Index change between 2015-2021, to show that a country’s ND-GAIN Index, which is an assessment of a country’s vulnerability to climate disruptions, and a country’s readiness to leverage private and public sector investments for adaptive and combative actions. This was done to prove that the increase of climate change, or CO2 emissions, from 2015-2021, didn’t have an negligible effect on the countries of the world’s overall ND-GAIN Index. However, I felt that if I used the bar graph for the two differences in “share of forest area”, it could also be highly representative of the negligible difference in the share of forest area of countries of the world between 1992 and 2023. The shape of each graph is extremely similar, and the values are incredibly close to one another, which, to the eye, makes it seem like there is virtually no difference between the two, which further strengthens the argument that the climate change and CO2 emission increase from 1992 to 2023 has negligible effect on the environment. 
+</li>
+          <li>Density(instead of a traditional “counts” bar graph): I chose to do density because in my opinion, it was better organized for the viewer to see with the total amount of share percentage of the countries around the world, and the similarity in shape between the two density histograms shows the negligible difference climate change has on the environment relative to the countries of the world. 
+</li>
+          <li>Dotted line at 0.0 ND-GAIN Index Change Mark: I specifically put a dotted line at 0.0, which is the mean of the graph to enhance the fact that from 2015-2021, the average ND-GAIN Index of the countries around the world did not change a single bit. This helps enhance my argument that increasing climate change and CO2 emissions have negligible effect on the environment. </li>
+          <li>Color: I used the color green as the theme of my visualizations because the color itself relates to the environment. That’s about all I have for it. I considered making it colorless to make it bland, essentially visualizing the idea that climate change is bland and has no real effect or emphasis on the environment. 
+</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Final Reflection</h2>
+
+        <p>Our first set of visualizations focus on the mean sea level and temperature change over time. As one could see in the plots, there has been a steady increase in both sea level and temperature change between 1992 and 2025.
+
+In our second set of visualizations, we see a map where  countries are highlighted based on their IMF-Adapted ND-Gain Index score. The score essentially tells whether a country is vulnerable to climate change, and if they are “ready” to combat it. The maps between 2015 and 2025 are almost identical, pointing at no significance in climate change in this time period. Similarly, the maps showcasing Share Forest Area show a viewer that between 1992 and 2023 there are drops in forest area in some parts of the world. However, we can see significant increase in other parts of the world which points towards climate change not having an effect on our forests across the world.
+
+Our group is leaning more towards the first visualizations as the second pair of visualizations are particularly misleading considering the overall data. For example:
+
+In the image from 1992, there is a large chunk of data missing from Africa leading viewers to see emptiness. Seeing this area becoming green along with the large country of China becoming green points towards overall increase in land area of forests with a decrease in concentrated, dense forests. 
+Looking at the numbers these dense forests lost upwards of 60% of their forest while these few other increases are at most 40%. Additionally, a percentage of a large number will always be bigger than the same percentage of a small number. Therefore, losing 60% of extremely dense forests has a far greater effect than increasing 40% in areas where there already weren't large forest populations. 
+In the image of IMF-Adapted ND-Gain of the world, the deceptive technique being used here is time. In the other visualizations we can see clear change because the data collected was taken over a 33 year period while this visualization has only seen data from a 6 year period. It’s also important to note that by 2015 climate change had already been affecting the world and governments had already begun to put measures in place to combat these changes. 
+</p>
+      </section>
+    </main>
+  </body>
+</html>
